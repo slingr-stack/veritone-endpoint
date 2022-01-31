@@ -1,0 +1,60 @@
+{
+    "label": "Veritone",
+    "name": "veritone",
+    "apiVersion": "v1",
+    "internal": false,
+    "configurationType": "GLOBAL",
+    "deployment": {
+        "profiles":[
+            {
+                "name": "default",
+                "label": "Default",
+                "memory": 384,
+                "offHeapMinFactor": 1.5,
+                "description": "Default configuration"
+            }
+        ],
+        "allowMultipleInstances": false
+    },
+    "status": "ACTIVE",
+    "events": [],
+    "functions": [
+        {
+            "label": "POST",
+            "name": "_post"
+        }
+    ],
+    "scripts": [
+        "http-generic-helpers.js",
+        "functions.js"
+    ],
+    "configuration": [
+        {
+            "name": "Environment",
+            "label": "environment",
+            "type": "buttonsGroup",
+            "required": true,
+            "defaultValue": "stage",
+            "typeOptions": {
+                "allowCustom": true,
+                "possibleValues":[
+                    {
+                        "label":"Stage",
+                        "name":"stage"
+                    },
+                    {
+                        "label":"Production",
+                        "name":"production"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "apiToken",
+            "label": "API token",
+            "description": "API token",
+            "type": "text",
+            "required": true
+        }
+    ]
+}
