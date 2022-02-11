@@ -17,7 +17,13 @@
         "allowMultipleInstances": false
     },
     "status": "ACTIVE",
-    "events": [],
+    "events": [
+        {
+            "label": "Webhook",
+            "name": "webhook",
+            "description": "Webhook sent from the Veritone platform"
+        }
+    ],
     "functions": [
         {
             "label": "POST",

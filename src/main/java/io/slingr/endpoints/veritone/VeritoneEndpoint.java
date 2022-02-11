@@ -3,9 +3,13 @@ package io.slingr.endpoints.veritone;
 import io.slingr.endpoints.HttpEndpoint;
 import io.slingr.endpoints.framework.annotations.EndpointFunction;
 import io.slingr.endpoints.framework.annotations.EndpointProperty;
+import io.slingr.endpoints.framework.annotations.EndpointWebService;
 import io.slingr.endpoints.framework.annotations.SlingrEndpoint;
+import io.slingr.endpoints.services.rest.RestMethod;
 import io.slingr.endpoints.utils.Json;
 import io.slingr.endpoints.ws.exchange.FunctionRequest;
+import io.slingr.endpoints.ws.exchange.WebServiceRequest;
+import io.slingr.endpoints.ws.exchange.WebServiceResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,6 +42,12 @@ public class VeritoneEndpoint extends HttpEndpoint {
     public Json postRequest(FunctionRequest request) {
         setRequestConfig(request);
         return httpService().defaultPostRequest(request);
+    }
+
+    @EndpointWebService(methods = {RestMethod.POST})
+    private WebServiceResponse inboundEvent(WebServiceRequest request) {
+        events().send("webhook", request.getJsonBody());
+        return new WebServiceResponse();
     }
 
     private void setRequestConfig(FunctionRequest request) {
