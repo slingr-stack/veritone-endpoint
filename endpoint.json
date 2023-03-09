@@ -27,12 +27,15 @@
     "functions": [
         {
             "label": "POST",
-            "name": "_post"
+            "name": "_post",
+            "description": "Sends a POST request using user credentials"
         }
     ],
     "scripts": [
-        "http-generic-helpers.js",
         "functions.js"
+    ],
+    "flowSteps": [
+        "apiCallVeritone"
     ],
     "configuration": [
         {
