@@ -1,100 +1,3 @@
----
-title: Veritone endpoint
-keywords: 
-last_updated: March 13, 2023
-tags: []
-summary: "Detailed description of the API of the Veritone endpoint."
----
-
-# Overview
-
-Veritone is a leading provider of artificial intelligence (AI) technology and solutions. The company's proprietary operating system, aiWARETM, orchestrates an expanding ecosystem of machine learning models to transform audio, video and other data sources into actionable intelligence.
-
-Some features in this endpoint are:
-
-- Authentication
-- Helpers to make GraphQL queries
-
-To make a GraphQL query, you can do something like this:
-
-```js
-var res = app.endpoints.veritone.gql.post(`
-  mutation runEngineJob {
-    createJob(
-      input: {
-        targetId: "102014611",
-        tasks: [
-          {
-            engineId: "8081cc99-c6c2-49b0-ab59-c5901a503508"
-          },
-          {
-            engineId: "insert-into-index"
-          },
-          {
-            engineId: "thumbnail-generator"
-          },
-          {
-            engineId: "mention-generate"
-          }
-        ]
-      }
-    )
-    {
-      id
-    }
-  }
-`);
-```
-
-Reference the [GraphQL API](https://docs.veritone.com/#/apis/using-graphql) for more information.
-
-# Configuration
-
-- You will need to create an account at Veritone
-- Generate an API token as described [here](https://docs.veritone.com/#/apis/authentication)
-
-## API Token
-API token to access Veritone's services
-
-# Quick start
-
-GraphQL API allows you to do everything you need. You can make a GraphQL query like this:
-
-```js
-var res = app.endpoints.veritone.gql.post(`
-  mutation runEngineJob {
-    createJob(
-      input: {
-        targetId: "102014611",
-        tasks: [
-          {
-            engineId: "8081cc99-c6c2-49b0-ab59-c5901a503508"
-          },
-          {
-            engineId: "insert-into-index"
-          },
-          {
-            engineId: "thumbnail-generator"
-          },
-          {
-            engineId: "mention-generate"
-          }
-        ]
-      }
-    )
-    {
-      id
-    }
-  }
-`);
-```
-
-You can find more information of the GraphQL API here:
-
-- Using GraphQL: https://docs.veritone.com/#/apis/using-graphql
-- GrpahQL basics: https://docs.veritone.com/#/apis/tutorials/graphql-basics
-- GrpahQL examples: https://docs.veritone.com/#/apis/examples
-
 # Javascript API
 
 The Javascript API of the veritone endpoint has three pieces:
@@ -106,7 +9,8 @@ The Javascript API of the veritone endpoint has three pieces:
 ## HTTP requests
 You can make `POST` requests to the [veritone API](API_URL_HERE) like this:
 ```javascript
-var response = app.endpoints.veritone.post('/v3/graphql', query)
+var response = app.endpoints.veritone.post('/v3/graphql/:query', body)
+var response = app.endpoints.veritone.post('/v3/graphql/:query')
 ```
 
 Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
@@ -120,18 +24,18 @@ Instead of having to use the generic HTTP methods, you can (and should) make use
 
 <br>
 
-* API URL: '/v3/graphql'
+* API URL: '/v3/graphql/:query'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.veritone.gql.post(query)
+app.endpoints.veritone.gql.post(query, body)
 ```
 ---
 
 </details>
-
+    
 ## Flow Step
 
-As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint:
+As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint: 
 <details>
     <summary>Click here to see the Flow Steps</summary>
 
@@ -238,18 +142,24 @@ Generic flow step for full use of the entire endpoint and its services.
 
 For more information about how shortcuts or flow steps works, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
 
+## Additional Flow Step
 
 
-# Events
+<details>
+    <summary>Click here to see the Customs Flow Steps</summary>
 
-This endpoint does not have any webhooks.
+<br>
 
-# About Slingr
 
-Slingr is a low-code rapid application development platform that accelerates development, with robust architecture for integrations and executing custom workflows and automation.
 
-[More info about Slingr](https://slingr.io)
+### Custom Flow Steps Name
 
-# License
+Description of Custom Flow Steps
 
-This endpoint is licensed under the Apache License 2.0. See the `LICENSE` file for more details.
+*MANUALLY ADD THE DOCUMENTATION OF THESE FLOW STEPS HERE...*
+
+
+</details>
+
+## Additional Helpers
+*MANUALLY ADD THE DOCUMENTATION OF THESE HELPERS HERE...*

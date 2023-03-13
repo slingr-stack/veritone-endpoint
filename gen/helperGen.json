@@ -1,0 +1,13 @@
+{
+  "fileName": "functions",
+  "endpointName": "veritone",
+  "apiDescriptors": [
+    {
+      "prefix": "",
+      "suffix": "",
+      "method": "POST",
+      "url": "/v3/graphql/:query",
+      "omittableUrlParts": ["v3", {"replace":"graphql","with":"gql"}]
+    }
+  ]
+}
