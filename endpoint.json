@@ -26,34 +26,109 @@
     ],
     "functions": [
         {
+            "label": "GET",
+            "name": "_get",
+            "description": "Sends a GET request"
+        },
+        {
             "label": "POST",
             "name": "_post",
-            "description": "Sends a POST request using user credentials"
+            "description": "Sends a POST request"
+        },
+        {
+            "label": "PUT",
+            "name": "_put",
+            "description": "Sends a PUT request"
+        },
+        {
+            "label": "PATCH",
+            "name": "_patch",
+            "description": "Sends a PATCH request"
+        },
+        {
+            "label": "DELETE",
+            "name": "_delete",
+            "description": "Sends a DELETE request"
+        },
+        {
+            "label": "HEAD",
+            "name": "_head",
+            "description": "Sends a HEAD request"
+        },
+        {
+            "label": "OPTIONS",
+            "name": "_options",
+            "description": "Sends a OPTIONS request"
         }
     ],
     "scripts": [
         "functions.js"
     ],
     "flowSteps": [
-        "apiCallVeritone"
+        "apiCallVeritone",
+        "apiDataVeritone"
     ],
     "configuration": [
         {
-            "name": "Environment",
-            "label": "environment",
+            "name": "config1",
+            "label": "OAuth config",
+            "value": "The following fields are needed to access to the Veritone API.",
+            "type": "info"
+        },
+        {
+            "name": "environment",
+            "label": "Environment",
+            "description": "Select the environment to target for the AI Data API and AI Data Admin. (If you are unsure, select 'Production')",
             "type": "buttonsGroup",
             "required": true,
-            "defaultValue": "stage",
+            "defaultValue": "prod",
             "typeOptions": {
-                "allowCustom": true,
+                "allowCustom": false,
                 "possibleValues":[
                     {
-                        "label":"Stage",
+                        "label":"Developer",
+                        "name":"dev"
+                    },
+                    {
+                        "label":"Staging",
                         "name":"stage"
                     },
                     {
                         "label":"Production",
-                        "name":"production"
+                        "name":"prod"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "region",
+            "label": "Geographic region",
+            "description": "Select the geographic region to be targeted by the AI Data API and AI Data Admin. (Custom allowed i.e. 'us-1'. If you are unsure, select 'Without region')",
+            "type": "buttonsGroup",
+            "required": true,
+            "defaultValue": "no",
+            "typeOptions": {
+                "allowCustom": true,
+                "possibleValues":[
+                    {
+                        "label":"US-1",
+                        "name":"us-1"
+                    },
+                    {
+                        "label":"CA-1",
+                        "name":"ca-1"
+                    },
+                    {
+                        "label":"UK-1",
+                        "name":"uk-1"
+                    },
+                    {
+                        "label":"UK",
+                        "name":"uk"
+                    },
+                    {
+                        "label":"Without region",
+                        "name":"no"
                     }
                 ]
             }
@@ -61,7 +136,7 @@
         {
             "name": "apiToken",
             "label": "API token",
-            "description": "API token",
+            "description": "API token generated in the Veritone Admin Console",
             "type": "text",
             "required": true
         }

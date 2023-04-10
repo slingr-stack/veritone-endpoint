@@ -2,7 +2,7 @@
   "label": "API call to veritone",
   "name": "apiCallVeritone",
   "category": "integrations",
-  "description": "This flow step will send generic request to Veritone Endpoint",
+  "description": "This flow step will send generic request to veritone",
   "inputs": [
     {
       "label": "Url",
@@ -10,30 +10,1136 @@
       "description": "The method and path to which this endpoint is to send requests in a generic way.",
       "type": "urlParams",
       "required": "true",
-      "defaultValue": "post1",
       "options": {
         "type": "dropDown",
         "possibleValues": [
-          {
-            "label": "POST /v3/graphql",
-            "name": "post1"
-          }
+            {
+              "label": "POST /v3/graphql/{query}/{variables}"
+            },
+            {
+              "label": "POST /api/admin/applications"
+            },
+            {
+              "label": "POST /api/admin/applications/{applicationId}/submit"
+            },
+            {
+              "label": "POST /api/admin/applications/{applicationId}/approve"
+            },
+            {
+              "label": "POST /api/admin/applications/{applicationId}/reject"
+            },
+            {
+              "label": "POST /api/admin/applications/{applicationId}/deploy"
+            },
+            {
+              "label": "POST /api/admin/applications/{applicationId}/disable"
+            },
+            {
+              "label": "POST /api/admin/applications/{applicationId}/enable"
+            },
+            {
+              "label": "POST /api/admin/external-credentials"
+            },
+            {
+              "label": "POST /api/admin/signup/assign-vertical"
+            },
+            {
+              "label": "POST /api/admin/login"
+            },
+            {
+              "label": "POST /api/admin/password/request-reset"
+            },
+            {
+              "label": "POST /api/admin/password/reset"
+            },
+            {
+              "label": "POST /api/admin/password-token"
+            },
+            {
+              "label": "POST /api/admin/mfa/verify/{token}"
+            },
+            {
+              "label": "POST /api/admin/org-invite/password/reset"
+            },
+            {
+              "label": "POST /api/admin/openid/linkUserToOid"
+            },
+            {
+              "label": "POST /api/admin/organizations/{id}/openid-roles"
+            },
+            {
+              "label": "POST /api/admin/organizations/{orgId}/paymentToken"
+            },
+            {
+              "label": "POST /analytics/qlik/organization/{organizationId}/init"
+            },
+            {
+              "label": "POST /api/admin/users/{userId}/mfa/register"
+            },
+            {
+              "label": "POST /api/admin/users/{userId}/mfa/register/verify/{type}/{token}"
+            },
+            {
+              "label": "POST /api/admin/users/{userId}/mfa/unregister/{type}"
+            },
+            {
+              "label": "POST /api/admin/signup"
+            },
+            {
+              "label": "POST /api/admin/signup/resend"
+            },
+            {
+              "label": "POST /api/admin/signup/verify"
+            },
+            {
+              "label": "POST /api/admin/users"
+            },
+            {
+              "label": "POST /api/admin/users/{userId}/roles/{roleId}"
+            },
+            {
+              "label": "POST /api/admin/users/{id}/force-password-reset"
+            },
+            {
+              "label": "POST /api/admin/users/me/user-settings"
+            },
+            {
+              "label": "POST /api/admin/users/me/accept-terms"
+            },
+            {
+              "label": "POST /api/admin/users/me/accept-dev-terms"
+            },
+            {
+              "label": "POST /api/admin/users/me/change-password"
+            },
+            {
+              "label": "POST /api/admin/users/me/set-developer-organization-fields"
+            },
+            {
+              "label": "POST /api/admin/users/me/mfa/register"
+            },
+            {
+              "label": "POST /api/admin/users/me/mfa/register/verify/{type}/{token}"
+            },
+            {
+              "label": "POST /api/admin/users/me/mfa/unregister/{type}"
+            },
+            {
+              "label": "POST /v2/project"
+            },
+            {
+              "label": "POST /v2/project/{projectid}/tts/clip"
+            },
+            {
+              "label": "POST /v2/project/{projectid}/sts/clip"
+            },
+            {
+              "label": "POST /v2/tts/preview"
+            },
+            {
+              "label": "POST /v2/project/{projectid}/tts/clip/{clipid}/convert"
+            },
+            {
+              "label": "POST /v2/project/{projectid}/sts/clip/{clipid}/convert"
+            },
+            {
+              "label": "POST /v2/lexicon"
+            },
+            {
+              "label": "POST /v2/lexicon/{lexiconid}/lexeme"
+            },
+            {
+              "label": "POST /v2/lexicon/{lexiconid}/lexeme/preview"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/{ResourceID}/engine"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/{ResourceID}/service"
+            },
+            {
+              "label": "POST /edge/v1/admin/server_type/{ServerTypeID}/add"
+            },
+            {
+              "label": "POST /edge/v1/admin/terminate"
+            },
+            {
+              "label": "POST /edge/v1/admin/licenses/apply"
+            },
+            {
+              "label": "POST /edge/v1/admin/auth"
+            },
+            {
+              "label": "POST /edge/v1/admin/backlog/clear"
+            },
+            {
+              "label": "POST /edge/v1/admin/applications/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/cores/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/organizations/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/permission/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/role/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/server_types/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/server_types/running_engine/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/service/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/tokens/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/applications/{ApplicationID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/organization/{OrganizationID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/{ResourceID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/role/{RoleID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/server_type/{ServerTypeID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/services/{ServiceID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/token/{TokenID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/user/{UserID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/server_type/{ServerTypeID}/desired"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/login"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/oauth2_login"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/register"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/{ResourceID}/engine/{EngineID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/server_type/{ServerTypeID}/remove"
+            },
+            {
+              "label": "POST /edge/v1/admin/backlog/reset-alloc"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/signup/initial"
+            },
+            {
+              "label": "POST /edge/v1/admin/core/{CoreID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/applications/{ApplicationID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/config"
+            },
+            {
+              "label": "POST /edge/v1/admin/config/{ConfigSection}"
+            },
+            {
+              "label": "POST /edge/v1/admin/config/{ConfigSection}/{ConfigKey}"
+            },
+            {
+              "label": "POST /edge/v1/admin/config/{ConfigSection}/{ConfigKey}"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/{ResourceID}/engine/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/organization/{OrganizationID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/permission/{PermissionID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/{ResourceID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/{ResourceID}/mapping/{ResourceMappingID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/{ResourceID}/mapping/{ResourceMappingID}/updatestate"
+            },
+            {
+              "label": "POST /edge/v1/admin/resource/{ResourceID}/updatestate"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/role/{RoleID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/server_type/{ServerTypeID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/server_type/{ServerTypeID}/engine/{EngineID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/service/{ServiceID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/token/{TokenID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/user/{UserID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/password/forgot"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/password/reset"
+            },
+            {
+              "label": "POST /edge/v1/admin/users/password/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/build/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/engine/create"
+            },
+            {
+              "label": "POST /edge/v1/admin/engine/category/create"
+            },
+            {
+              "label": "POST /edge/v1/engine/{EngineID}/createjob"
+            },
+            {
+              "label": "POST /edge/v1/admin/build/{BuildID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/admin/engine/{EngineID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/engine/instance/{EngineInstanceID}/getwork"
+            },
+            {
+              "label": "POST /edge/v1/proc/jobs/backlog_count_by_engine"
+            },
+            {
+              "label": "POST /edge/v1/admin/build/{BuildID}/pause"
+            },
+            {
+              "label": "POST /edge/v1/admin/engine/{EngineID}/pause"
+            },
+            {
+              "label": "POST /edge/v1/engine/instance/register"
+            },
+            {
+              "label": "POST /edge/v1/admin/engine/{EngineID}/replace"
+            },
+            {
+              "label": "POST /edge/v1/admin/build/{BuildID}/resume"
+            },
+            {
+              "label": "POST /edge/v1/admin/engine/{EngineID}/resume"
+            },
+            {
+              "label": "POST /edge/v1/engine/instance/{EngineInstanceID}/terminate"
+            },
+            {
+              "label": "POST /edge/v1/admin/engine/{EngineID}/update"
+            },
+            {
+              "label": "POST /edge/v1/admin/build/{BuildID}/update"
+            },
+            {
+              "label": "POST /edge/v1/engine/build/{BuildID}/state"
+            },
+            {
+              "label": "POST /edge/v1/admin/engine/category/{EngineCategoryID}/update"
+            },
+            {
+              "label": "POST /edge/v1/engine/instance/{EngineInstanceID}/updatestatus"
+            },
+            {
+              "label": "POST /edge/v1/engine/{EngineID}/template/{EngineTemplateName}"
+            },
+            {
+              "label": "POST /edge/v1/flow/nrcontainer/create"
+            },
+            {
+              "label": "POST /edge/v1/flow/delete/{ContainerID}"
+            },
+            {
+              "label": "POST /edge/v1/flow/request/update"
+            },
+            {
+              "label": "POST /edge/v1/flow/{HostID}/updatestatus"
+            },
+            {
+              "label": "POST /edge/v1/host/{HostID}/drain"
+            },
+            {
+              "label": "POST /edge/v1/host/alert"
+            },
+            {
+              "label": "POST /edge/v1/host/launch"
+            },
+            {
+              "label": "POST /edge/v1/host/{HostID}/pause"
+            },
+            {
+              "label": "POST /edge/v1/host/{HostID}/engine/register"
+            },
+            {
+              "label": "POST /edge/v1/host/register"
+            },
+            {
+              "label": "POST /edge/v1/host/{HostID}/resume"
+            },
+            {
+              "label": "POST /edge/v1/host/{HostID}/terminate"
+            },
+            {
+              "label": "POST /edge/v1/host/{HostID}/updatestatus"
+            },
+            {
+              "label": "POST /edge/v1/proc/job/{JobID}/addtask"
+            },
+            {
+              "label": "POST /edge/v1/proc/job/{JobID}/addtaskroute"
+            },
+            {
+              "label": "POST /edge/v1/proc/jobs/cancel"
+            },
+            {
+              "label": "POST /edge/v1/proc/job/create"
+            },
+            {
+              "label": "POST /edge/v1/proc/job/{JobID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/proc/scheduled_job/{ScheduledJobID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/proc/task/{TaskID}/delete"
+            },
+            {
+              "label": "POST /edge/v1/proc/template/{TemplateID}/launch"
+            },
+            {
+              "label": "POST /edge/v1/proc/endpoint/{Endpoint}"
+            },
+            {
+              "label": "POST /edge/v1/proc/tasks/update_status"
+            },
+            {
+              "label": "POST /edge/v1/proxy/{HostID}/getwork"
+            },
+            {
+              "label": "POST /edge/v1/proxy/{HostID}/register"
+            },
+            {
+              "label": "POST /edge/v1/proxy/{HostID}/terminate"
+            },
+            {
+              "label": "POST /edge/v1/proxy/{HostID}/update"
+            },
+            {
+              "label": "POST /edge/v1/security/getstorageserverpublickeyset"
+            },
+            {
+              "label": "POST /edge/v1/service/instance/create"
+            },
+            {
+              "label": "POST /edge/v1/service/instance/{ServiceInstanceID}/delete"
+            },
+            {
+              "label": "PUT /api/admin/applications/{applicationId}/event-endpoint"
+            },
+            {
+              "label": "PUT /api/admin/applications/{applicationId}"
+            },
+            {
+              "label": "PUT /api/admin/external-credentials/{externalCredentialId}"
+            },
+            {
+              "label": "PUT /api/integration/{integrationId}/org/{orgId}"
+            },
+            {
+              "label": "PUT /api/admin/organizations/{id}/openid-roles/{openidRoleKey}"
+            },
+            {
+              "label": "PUT /api/admin/organizations/{id}/integration/{integrationId}"
+            },
+            {
+              "label": "PUT /api/admin/organizations/{orgId}"
+            },
+            {
+              "label": "PUT /analytics/qlik/stream/{streamName}"
+            },
+            {
+              "label": "PUT /api/admin/users/{userId}/mfa/default/{type}"
+            },
+            {
+              "label": "PUT /api/admin/users/{id}"
+            },
+            {
+              "label": "PUT /api/admin/users/me/user-settings"
+            },
+            {
+              "label": "PUT /v2/project/{projectid}"
+            },
+            {
+              "label": "PUT /v2/project/{projectid}/tts/clip/{clipid}"
+            },
+            {
+              "label": "PUT /v2/project/{projectid}/tts/clip/{clipid}/upload"
+            },
+            {
+              "label": "PUT /v2/lexicon/{lexiconid}"
+            },
+            {
+              "label": "DELETE /api/admin/applications/{applicationId}/event-endpoint"
+            },
+            {
+              "label": "DELETE /api/admin/applications/{applicationId}"
+            },
+            {
+              "label": "DELETE /api/admin/organizations/{id}/applications"
+            },
+            {
+              "label": "DELETE /api/admin/external-credentials/{externalCredentialId}"
+            },
+            {
+              "label": "DELETE /api/admin/organizations/{id}/openid-roles/{openidRoleKey}"
+            },
+            {
+              "label": "DELETE /api/admin/organizations/{id}/integration/{integrationId}"
+            },
+            {
+              "label": "DELETE /api/admin/openid/user/{userId}/connection/{connectId}"
+            },
+            {
+              "label": "DELETE /api/admin/users/{id}"
+            },
+            {
+              "label": "DELETE /api/admin/users/{userId}/roles/{roleId}"
+            },
+            {
+              "label": "DELETE /api/admin/users/me/user-settings/{key}"
+            },
+            {
+              "label": "DELETE /v2/project/{projectid}"
+            },
+            {
+              "label": "DELETE /v2/project/{projectid}/tts/clip/{clipid}"
+            },
+            {
+              "label": "DELETE /v2/project/{projectid}/sts/clip/{clipid}"
+            },
+            {
+              "label": "DELETE /v2/lexicon/{lexiconid}"
+            },
+            {
+              "label": "DELETE /v2/lexicon/{lexiconid}/lexeme/{lexemeid}"
+            },
+            {
+              "label": "DELETE /edge/v1/admin/licenses/{LicenseID}/delete"
+            },
+            {
+              "label": "DELETE /edge/v1/admin/server_type/{ServerTypeID}/delete"
+            },
+            {
+              "label": "DELETE /edge/v1/admin/server_type/{ServerTypeID}/engine/{EngineID}/delete"
+            },
+            {
+              "label": "DELETE /edge/v1/engine/{EngineID}/template/{EngineTemplateName}"
+            },
+            {
+              "label": "GET /api/admin/applications"
+            },
+            {
+              "label": "GET /api/admin/applications/{applicationId}"
+            },
+            {
+              "label": "GET /api/admin/applications/{applicationId}"
+            },
+            {
+              "label": "GET /api/admin/external-credentials"
+            },
+            {
+              "label": "GET /api/admin/external-credentials/{externalCredentialId}"
+            },
+            {
+              "label": "GET /api/admin/external-credentials/{externalCredentialId}"
+            },
+            {
+              "label": "GET /api/admin/current-user"
+            },
+            {
+              "label": "GET /api/admin/users/me/applications"
+            },
+            {
+              "label": "GET /api/admin/users/me/refresh-user-cache"
+            },
+            {
+              "label": "GET /api/admin/signup/assign-vertical/{cloneId}/clone-progress"
+            },
+            {
+              "label": "GET /api/admin/signup/initial/{token}"
+            },
+            {
+              "label": "GET /api/admin/token/{token}"
+            },
+            {
+              "label": "GET /api/admin/token/{token}/logout"
+            },
+            {
+              "label": "GET /api/admin/token/{token}/refresh"
+            },
+            {
+              "label": "GET /api/admin/token/{token}/extend"
+            },
+            {
+              "label": "GET /api/admin/mfa/{type}/token"
+            },
+            {
+              "label": "GET /api/admin/bearer/{token}"
+            },
+            {
+              "label": "GET /api/admin/users/{id}/reload"
+            },
+            {
+              "label": "GET /api/admin/organization/{orgId}/integration/{integrationId}"
+            },
+            {
+              "label": "GET /api/admin/groups/application/organization"
+            },
+            {
+              "label": "GET /api/admin/organizations/{orgId}"
+            },
+            {
+              "label": "GET /api/admin/organizations/{orgId}/roles"
+            },
+            {
+              "label": "GET /api/admin/organizations/{id}/integrations"
+            },
+            {
+              "label": "GET /api/admin/organizations/{orgId}/paymentToken"
+            },
+            {
+              "label": "GET /api/admin/organizations/{orgId}/invoices"
+            },
+            {
+              "label": "GET /api/admin/integration/{integrationId}"
+            },
+            {
+              "label": "GET /api/admin/permissions"
+            },
+            {
+              "label": "GET /api/admin/permissions/{permId}"
+            },
+            {
+              "label": "GET /api/admin/permissions/{permId}"
+            },
+            {
+              "label": "GET /analytics/qlik/app"
+            },
+            {
+              "label": "GET /analytics/qlik/app/{appId}"
+            },
+            {
+              "label": "GET /analytics/qlik/app/{appId}"
+            },
+            {
+              "label": "GET /analytics/qlik/app/{appId}/sheet"
+            },
+            {
+              "label": "GET /api/admin/tokens/organizations/{organizationId}/tokens/all"
+            },
+            {
+              "label": "GET /api/admin/users/{userId}/mfa"
+            },
+            {
+              "label": "GET /api/admin/roles"
+            },
+            {
+              "label": "GET /api/admin/roles/{roleId}"
+            },
+            {
+              "label": "GET /api/admin/roles/{roleId}"
+            },
+            {
+              "label": "GET /api/admin/roles/{roleId}/permissions"
+            },
+            {
+              "label": "GET /api/admin/signup/verify/{userName}"
+            },
+            {
+              "label": "GET /api/admin/users"
+            },
+            {
+              "label": "GET /api/admin/users/{id}"
+            },
+            {
+              "label": "GET /api/admin/users/{id}"
+            },
+            {
+              "label": "GET /api/admin/users/{id}/permissions"
+            },
+            {
+              "label": "GET /api/admin/users/{id}/scim_connect_ids"
+            },
+            {
+              "label": "GET /api/admin/users/me/user-settings"
+            },
+            {
+              "label": "GET /api/admin/users/me/mfa"
+            },
+            {
+              "label": "GET /api/admin/username/{email}/available"
+            },
+            {
+              "label": "GET /v2/project/{projectid}"
+            },
+            {
+              "label": "GET /v2/projects"
+            },
+            {
+              "label": "GET /v2/project/{projectid}/clips"
+            },
+            {
+              "label": "GET /v2/project/{projectid}/tts/clip/{clipid}"
+            },
+            {
+              "label": "GET /v2/project/{projectid}/sts/clip/{clipid}"
+            },
+            {
+              "label": "GET /v2/sts/voices?lang"
+            },
+            {
+              "label": "GET /v2/lexicon"
+            },
+            {
+              "label": "GET /v2/lexicon/{lexicon_id}"
+            },
+            {
+              "label": "GET /v2/lexicon/{lexicon_id}"
+            },
+            {
+              "label": "GET /v2/tts/voice?lang"
+            },
+            {
+              "label": "GET /v2/tts/voice/{voice_id}"
+            },
+            {
+              "label": "GET /v2/tts/voice/{voice_id}"
+            },
+            {
+              "label": "GET /v2/tts/voice/{voice_id}/versions"
+            },
+            {
+              "label": "GET /edge/v1/admin/application/{ApplicationID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/core/{CoreID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/cores"
+            },
+            {
+              "label": "GET /edge/v1/admin/engine/{EngineID}/config/{ConfigSection}/{ConfigKey}"
+            },
+            {
+              "label": "GET /edge/v1/admin/organization/{OrganizationID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/organization/{OrganizationID}/tokens"
+            },
+            {
+              "label": "GET /edge/v1/admin/organizations"
+            },
+            {
+              "label": "GET /edge/v1/admin/users/permission/{PermissionID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/users/role/{RoleID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/service/instances"
+            },
+            {
+              "label": "GET /edge/v1/admin/service/{ServiceID}/instances"
+            },
+            {
+              "label": "GET /edge/v1/admin/service/{ServiceID}/instances"
+            },
+            {
+              "label": "GET /edge/v1/admin/status"
+            },
+            {
+              "label": "GET /edge/v1/admin/token/{TokenID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/token/{TokenID}/permissions"
+            },
+            {
+              "label": "GET /edge/v1/admin/tokens"
+            },
+            {
+              "label": "GET /edge/v1/admin/user/{UserID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/user/{UserID}/permissions"
+            },
+            {
+              "label": "GET /edge/v1/admin/user/{UserID}/tokens"
+            },
+            {
+              "label": "GET /edge/v1/admin/users"
+            },
+            {
+              "label": "GET /edge/v1/admin/users/permissions"
+            },
+            {
+              "label": "GET /edge/v1/admin/users/roles"
+            },
+            {
+              "label": "GET /edge/v1/admin/applications"
+            },
+            {
+              "label": "GET /edge/v1/admin/backlog/summary"
+            },
+            {
+              "label": "GET /edge/v1/admin/config"
+            },
+            {
+              "label": "GET /edge/v1/admin/config/{ConfigSection}"
+            },
+            {
+              "label": "GET /edge/v1/admin/config/{ConfigSection}/{ConfigKey}"
+            },
+            {
+              "label": "GET /edge/v1/admin/config/{ConfigSection}/{ConfigKey}"
+            },
+            {
+              "label": "GET /edge/v1/admin/resource/{ResourceID}/engines"
+            },
+            {
+              "label": "GET /edge/v1/admin/licenses/{LicenseID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/licenses"
+            },
+            {
+              "label": "GET /edge/v1/admin/resource/{ResourceID}/mappings"
+            },
+            {
+              "label": "GET /edge/v1/admin/resource/{ResourceID}"
+            },
+            {
+              "label": "GET /edge/v1/admin/resource/{ResourceID}/mapping/{ResourceMappingID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/resources"
+            },
+            {
+              "label": "GET /edge/v1/admin/engine/{EngineID}/resources"
+            },
+            {
+              "label": "GET /edge/v1/admin/host/{HostID}/resources"
+            },
+            {
+              "label": "GET /edge/v1/admin/service/{ServiceID}/resources"
+            },
+            {
+              "label": "GET /edge/v1/admin/server_type/{ServerTypeID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/server_types/running_engines"
+            },
+            {
+              "label": "GET /edge/v1/admin/server_type/{ServerTypeID}/engine/{EngineID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/server_types"
+            },
+            {
+              "label": "GET /edge/v1/admin/service/{ServiceID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/services"
+            },
+            {
+              "label": "GET /edge/v1/admin/build/{BuildID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/admin/engine/{EngineID}/builds"
+            },
+            {
+              "label": "GET /edge/v1/engine/builds"
+            },
+            {
+              "label": "GET /edge/v1/engine/builds/downloads"
+            },
+            {
+              "label": "GET /edge/v1/admin/engine/categories"
+            },
+            {
+              "label": "GET /edge/v1/admin/engine/category/{EngineCategoryID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/engine/container_count"
+            },
+            {
+              "label": "GET /edge/v1/admin/engine/{EngineID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/engine/instance/{EngineInstanceID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/engine/instances"
+            },
+            {
+              "label": "GET /edge/v1/engine/{EngineID}/instances"
+            },
+            {
+              "label": "GET /edge/v1/engine/{EngineID}/instances"
+            },
+            {
+              "label": "GET /edge/v1/engine/instance/{EngineInstanceID}/logs"
+            },
+            {
+              "label": "GET /edge/v1/engine/instance/{EngineInstanceID}/status"
+            },
+            {
+              "label": "GET /edge/v1/engine/instance/{EngineInstanceID}/workdetail"
+            },
+            {
+              "label": "GET /edge/v1/engine/{EngineID}/launch/{LaunchID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/engine/{EngineID}/launches"
+            },
+            {
+              "label": "GET /edge/v1/admin/engine/stats"
+            },
+            {
+              "label": "GET /edge/v1/engine/{EngineID}/template/{EngineTemplateName}"
+            },
+            {
+              "label": "GET /edge/v1/admin/engines"
+            },
+            {
+              "label": "GET /edge/v1/engine/instance/{EngineInstanceID}/resources"
+            },
+            {
+              "label": "GET /edge/v1/flowaction/requests/clean"
+            },
+            {
+              "label": "GET /edge/v1/automate/containers"
+            },
+            {
+              "label": "GET /edge/v1/hosts/cpu_usage"
+            },
+            {
+              "label": "GET /edge/v1/host/{HostID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/engine/memory_usage"
+            },
+            {
+              "label": "GET /edge/v1/host/{HostID}/status"
+            },
+            {
+              "label": "GET /edge/v1/hosts"
+            },
+            {
+              "label": "GET /edge/v1/hosts/counts"
+            },
+            {
+              "label": "GET /edge/v1/hosts/counts_by_type"
+            },
+            {
+              "label": "GET /edge/v1/host/{HostID}/launch"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/error/engine_error_time_ranges"
+            },
+            {
+              "label": "GET /edge/v1/proc/job/{JobID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/proc/job/{JobID}/download/{JobOutputName}"
+            },
+            {
+              "label": "GET /edge/v1/proc/job/{JobID}/output/{JobOutputName}"
+            },
+            {
+              "label": "GET /edge/v1/proc/job/{JobID}/outputs"
+            },
+            {
+              "label": "GET /edge/v1/proc/job/{JobID}/performance"
+            },
+            {
+              "label": "GET /edge/v1/proc/job/{JobID}/status"
+            },
+            {
+              "label": "GET /edge/v1/proc/job/{JobID}/workrequests"
+            },
+            {
+              "label": "GET /edge/v1/proc/jobs"
+            },
+            {
+              "label": "GET /edge/v1/proc/jobs/stats/organization"
+            },
+            {
+              "label": "GET /edge/v1/proc/jobs/performance"
+            },
+            {
+              "label": "GET /edge/v1/proc/jobs/stats"
+            },
+            {
+              "label": "GET /edge/v1/proc/jobs/stats/time_ranges"
+            },
+            {
+              "label": "GET /edge/v1/proc/scheduled_jobs/rate_pending_time_ranges"
+            },
+            {
+              "label": "GET /edge/v1/proc/scheduled_job/{ScheduledJobID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/proc/scheduled_jobs"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/error/server_error_counts"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/{TaskID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/{TaskID}/download/{TaskOutputName}"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/{TaskID}/logs"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/{TaskID}/output/{TaskOutputName}"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/{TaskID}/outputs"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/reports"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/reports/{ReportMonth}"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/reports/{ReportMonth}"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/sync_backlog"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/{TaskID}/timings"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/error/count_type_by_engine"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/errors"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/instances/by_category_host"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/stats"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/stats/categories"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/stats/engines"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/stats/organizations"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/stats/time_ranges"
+            },
+            {
+              "label": "GET /edge/v1/proc/scheduled_jobs/total_pending_time_ranges"
+            },
+            {
+              "label": "GET /edge/v1/proc/workrequest/{WorkRequestID}/detail"
+            },
+            {
+              "label": "GET /edge/v1/proc/task/listreports"
+            },
+            {
+              "label": "GET /edge/v1/proc/job/{JobID}/recheck_status"
+            },
+            {
+              "label": "GET /edge/v1/proc/tasks/stats/export"
+            },
+            {
+              "label": "GET /edge/v1/service/instance/{ServiceInstanceID}/resources"
+            },
+            {
+              "label": "PATCH /api/admin/organizations/{id}/applications"
+            }
         ]
       }
     },
     {
-      "label": "Query",
-      "name": "query",
-      "description": "Graphql custom query.",
-      "type": "text",
-      "required": "true",
-      "representation": "textarea"
+      "label": "Headers",
+      "name": "headers",
+      "description": "Let the client and the server pass additional information with the HTTP request in a key value format. (e.g. key=ABC123)",
+      "type": "keyValue"
+    },
+    {
+      "label": "Query Params",
+      "name": "params",
+      "description": "Parameters attached to the end of a url in a key value format. (e.g. key=ABC123)",
+      "type": "keyValue"
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "type": "json",
+      "description": "Content to be sent to the server.",
+      "options": {
+        "allowContextSelector": "false"
+      }
     },
     {
       "label": "Override Settings",
       "name": "overrideSettings",
       "type": "boolean",
-      "description": "If true, allows adding configurations.",
+      "description": "If true, allows adding configurations",
       "defaultValue": false,
       "options": {
         "allowContextSelector": "false"
@@ -43,7 +1149,7 @@
       "label": "Full Response",
       "name": "fullResponse",
       "type": "boolean",
-      "description": "Include extended information about response.",
+      "description": "Include extended information about response",
       "visibility": "config.overrideSettings",
       "defaultValue": false,
       "options": {
