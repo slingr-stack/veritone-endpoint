@@ -1,52 +1,28 @@
 /**
- * This flow step will send generic request.
+ * This flow step will a generic request to AI Data API.
  *
  * @param {object} inputs
- * {text} method, This is used to config method.
- * {text} url, This is used to config external URL.
- * {Array[string]} pathVariables, This is used to config path variables.
- * {Array[string]} headers, This is used to config headers.
- * {Array[string]} params, This is used to config params.
- * {string} body, This is used to send body request.
- * {boolean} followRedirects, This is used to config follow redirects.
- * {boolean} download, This is used to config download.
+ * {string} query, This is used to config the query of the request.
+ * {string} variables, This is used to config the variables of the request.
  * {boolean} fullResponse, This is used to config full response.
  * {number} connectionTimeout, Read timeout interval, in milliseconds.
  * {number} readTimeout, Connect timeout interval, in milliseconds.
  */
-step.apiCallVeritone = function (inputs) {
+step.apiDataVeritone = function (inputs) {
 
 	var inputsLogic = {
-		headers: inputs.headers || [],
-		params: inputs.params || [],
-		body: inputs.body || {},
-		followRedirects: inputs.followRedirects || false,
-		download: inputs.download || false,
-		fileName: inputs.fileName || "",
 		fullResponse: inputs.fullResponse || false,
 		connectionTimeout: inputs.connectionTimeout || 5000,
 		readTimeout: inputs.readTimeout || 60000,
-		url: {
-			urlValue: inputs.url.urlValue ? inputs.url.urlValue.split(" ")[1] : "",
-			paramsValue: inputs.url.paramsValue || []
-		},
-		method: inputs.url.urlValue ? inputs.url.urlValue.split(" ")[0] : ""
+		method: 'post',
+		query: inputs.query || "",
+		variables: inputs.variables || ""
 	};
 
-	inputsLogic.headers = isObject(inputsLogic.headers) ? inputsLogic.headers : stringToObject(inputsLogic.headers);
-	inputsLogic.params = isObject(inputsLogic.params) ? inputsLogic.params : stringToObject(inputsLogic.params);
-	inputsLogic.body = isObject(inputsLogic.body) ? inputsLogic.body : JSON.parse(inputsLogic.body);
-
-
 	var options = {
-		path: parse(inputsLogic.url.urlValue, inputsLogic.url.paramsValue),
-		params: inputsLogic.params,
-		headers: inputsLogic.headers,
-		body: inputsLogic.body,
-		followRedirects : inputsLogic.followRedirects,
-		forceDownload :inputsLogic.download,
-		downloadSync : false,
-		fileName: inputsLogic.fileName,
+		path: parse('/v3/graphql'),
+		query: inputsLogic.query,
+		variables: inputsLogic.variables,
 		fullResponse : inputsLogic.fullResponse,
 		connectionTimeout: inputsLogic.connectionTimeout,
 		readTimeout: inputsLogic.readTimeout
@@ -72,8 +48,6 @@ step.apiCallVeritone = function (inputs) {
 		case 'trace':
 			return endpoint._trace(options);
 	}
-
-	
 
 	return null;
 };
