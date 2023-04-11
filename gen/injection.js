@@ -163,5 +163,6 @@ module.exports = {
     aiDataGraphqlPost,
     voiceLexiconLexemeGet,
     processingAdminServiceConfigGet,
-    aiDataAdminOrganizationsOpenidRolesGet
+    aiDataAdminOrganizationsOpenidRolesGet,
+    voiceTtsVoiceGet
 };

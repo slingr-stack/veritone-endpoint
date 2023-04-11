@@ -1695,7 +1695,8 @@
       ],
       "docsLinks": [
         "https://voice-docs.veritone-ce.com/"
-      ]
+      ],
+      "injectedHelper": true
     },
     {
       "prefix": "voice",
@@ -1707,7 +1708,8 @@
       ],
       "docsLinks": [
         "https://voice-docs.veritone-ce.com/"
-      ]
+      ],
+      "injectedHelper": true
     },
     {
       "prefix": "voice",
