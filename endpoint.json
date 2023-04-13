@@ -94,6 +94,10 @@
                         "name":"stage"
                     },
                     {
+                        "label":"Staging Me",
+                        "name":"stage-me"
+                    },
+                    {
                         "label":"Production",
                         "name":"prod"
                     }

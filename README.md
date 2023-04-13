@@ -64,7 +64,6 @@ Reference the [GraphQL API](https://docs.veritone.com/#/apis/using-graphql) and 
 
 
 - The Environment and Geographic region (Or location) fields can be obtained from the url from which you are registered and to which you are logging in step 2.
-- **A Single Sign On system for Veritone services is included in the Slingr platform. The configuration of this endpoint does not require the configuration of this SSO system.**
 
 # Quick start
 
